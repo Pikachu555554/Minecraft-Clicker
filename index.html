@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Minecraft Clicker</title>
+</head>
+<body>
+  <div style="text-align: center">
+    <h1>Minecraft Clicker</h1>  
+  </div>
+  <div class="full">
+    <div class="main">
+      <div style="text-align: center">
+        <h2>Grass per click: <span id="addboostdisp"></span></h2>
+        <h2>Gps (Grass per Second):<span id="autoclickdisp"></span></h2>
+        <h2>Current Prestige: <span id="prestigedisp"></span></h2>
+        <h6><b><span id="clicks"></span></b></h6>
+        <button type="button" id="click">
+        <img src="McGrass.png" alt="A grass block from the game Minecraft. Click this button to gain clicks.">
+        </button>
+  
+      </div>
+    </div>
+    <div class="shop">
+      <div style="text-align: center">
+        <details>
+        <summary>Shop</summary>
+        <h1>Shop</h1>
+        <div class="innershop">
+          <div class="clickerupgrades">
+            <h3>Wooden Shovel</h3>
+            <p>Adds 1 to your grass gain per click</p>
+            <button id="upgradei"><span id="upgradeipricedisp"></span> grass</button>
+            <h3>Stone Shovel</h3>
+            <p> Adds 10 to your grass gain per click</p>
+            <button id="upgradeiii"><span id="upgradeiiipricedisp"></span> grass</button>
+            <h3>Efficency I</h3>
+            <p>Doubles the amount of grass you gain from clicking (max 2)</p>
+            <button id="upgradev"><span id="upgradevpricedisp"></span> grass</button>
+            <h3>Copper Shovel</h3>
+            <p>Adds 100 to your grass gain per click</p>
+            <button id="upgradevii"><span id="upgradeviipricedisp"></span> grass</button>
+            <h3>Iron Shovel</h3>
+            <p>Adds 1K to your grass gain per click</p>
+            <button id="upgradeix"><span id="upgradeixpricedisp"></span> grass</button>
+            <h3>Efficency II</h3>
+            <p>Triples the amount of grass you gain from clicking (max 2)</p>
+            <button id="upgradexi"><span id="upgradexipricedisp"></span> grass</button>
+            <h3>Diamond Shovel</h3>
+            <p>Adds 10K to your grass gain per click</p>
+            <button id="upgradexiii"><span id="upgradexiiipricedisp"></span> grass</button>
+            <h3>Netherite Shovel</h3>
+            <p>Adds 100K to your grass gain per click</p>
+            <button id="upgradexv"><span id="upgradexvpricedisp"></span> grass</button>
+          </div>
+          <div class="autoclickerupgrades">
+            <h3>Chicken</h3>
+            <p>Automatically Generates 1 grass per second</p>
+            <button id="upgradeii"><span id="upgradeiipricedisp"></span> grass</button>
+            <h3>Pig</h3>
+            <p> Automatically Generates 10 grass per second</p>
+            <button id="upgradeiv"><span id="upgradeivpricedisp"></span> grass</button>
+            <h3>Beetroot</h3>
+            <p>Doubles the amount of grass you gain automatically each second (max 2)</p>
+            <button id="upgradevi"><span id="upgradevipricedisp"></span> grass</button>
+            <h3>Cow</h3>
+            <p>Automatically Generates 100 grass per second</p>
+            <button id="upgradeviii"><span id="upgradeviiipricedisp"></span> grass</button>
+            <h3>Zombie</h3>
+            <p>Automatically Generates 1K grass per second</p>
+            <button id="upgradex"><span id="upgradexpricedisp"></span> grass</button>
+            <h3>Skeleton</h3>
+            <p>Triples the amount of grass you gain automatically per second</p>
+            <button id="upgradexii"><span id="upgradexiipricedisp"></span> grass</button>
+            <h3>Spider</h3>
+            <p>Automatically Generates 10K grass per second</p>
+            <button id="upgradexiv"><span id="upgradexivpricedisp"></span> grass</button>
+            <h3>Spider</h3>
+            <p>Automatically Generates 100K grass per second</p>
+            <button id="upgradexvi"><span id="upgradexvipricedisp"></span> grass</button>
+          </div>
+        </div>
+        <h3>Prestige</h3>
+        <p>Move on to the next area</p>
+        <button id="prestige"><span id="prestigepricedisp"></span> grass</button>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <h1>Update Log</h1>
+    <h2>Version 1.2</h2>
+    <h3>
+        - Added every single upgrade (for now)<br>
+        - Shop now able to minimize and expand<br>
+        - Old font replaced<br>
+        - Update Log moved to fix bug <br>
+        - Other changes <br>
+     </h3>
+  </div>
+      <script src="app.js" defer></script>
+</body>
+</html>
