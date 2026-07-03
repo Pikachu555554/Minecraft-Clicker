@@ -16,6 +16,7 @@ body{
 #click{
     background-color: transparent; 
     font-family:Minecraft;
+    touch-action: manipulation;
 }
 .full{
     display:flex;
