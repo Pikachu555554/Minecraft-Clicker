@@ -1,0 +1,46 @@
+@import url('https://fonts.cdnfonts.com/css/minecraft-4');
+
+h1 {
+    background-color: green;
+    padding: 10px;
+    font-family:Minecraft;
+}
+h6 {
+    font-size: 50px;
+    font-family:Minecraft;
+}
+body{
+    background-color: rgb(75, 40, 21);
+    font-family:Minecraft;
+}
+#click{
+    background-color: transparent; 
+    font-family:Minecraft;
+}
+.full{
+    display:flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+.innershop{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.clickerupgrades, .autoclickerupgrades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{
+    color: green;
+    font-family:Minecraft;
+
+}
+summary{
+    font-family: Minecraft;
+    font-size: 50px;
+}
