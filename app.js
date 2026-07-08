@@ -36,7 +36,7 @@ let upgradexiiiprice=Number(localStorage.getItem("upgradexiiiprice")) ||100000;
 let upgradexivprice=Number(localStorage.getItem("upgradexivprice")) ||100000;
 let upgradexvprice=Number(localStorage.getItem("upgradexvprice")) ||1000000;
 let upgradexviprice=Number(localStorage.getItem("upgradexiprice")) ||1000000;
-let prestigeprice=Number(localStorage.getItem("upgradexiprice")) ||10000000;
+let prestigeprice=Number(localStorage.getItem("upgradexiprice")) ||100000000;
 
 let inflationupgradei=1.2
 let inflationupgradeii=1.2
