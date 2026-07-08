@@ -15,8 +15,64 @@ body{
 }
 #click{
     background-color: transparent; 
+    background-size: 100%, 100%;
+    border:none;
     font-family:Minecraft;
     touch-action: manipulation;
+}
+#upgradei{
+    touch-action: manipulation;  
+}
+#upgradeii{
+    touch-action: manipulation;  
+}
+#upgradeiii{
+    touch-action: manipulation;  
+}
+#upgradeiv{
+    touch-action: manipulation;  
+}
+#upgradev{
+    touch-action: manipulation;  
+}
+#upgradev{
+    touch-action: manipulation;  
+}
+#upgradevi{
+    touch-action: manipulation;  
+}
+#upgradevii{
+    touch-action: manipulation;  
+}
+#upgradeviii{
+    touch-action: manipulation;  
+}
+#upgradeix{
+    touch-action: manipulation;  
+}
+#upgradex{
+    touch-action: manipulation;  
+}
+#upgradexi{
+    touch-action: manipulation;  
+}
+#upgradexii{
+    touch-action: manipulation;  
+}
+#upgradexiii{
+    touch-action: manipulation;  
+}
+#upgradexiv{
+    touch-action: manipulation;  
+}
+#upgradexv{
+    touch-action: manipulation;  
+}
+#upgradexvi{
+    touch-action: manipulation;  
+}
+#prestige{
+    touch-action: manipulation;  
 }
 .full{
     display:flex;
