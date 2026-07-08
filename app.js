@@ -243,7 +243,7 @@ function buyupgradeiv(){
     if (clicks>=upgradeivprice){
       clicks=clicks-upgradeivprice
       autoclicker=autoclicker+10
-      uiv_ct=uiv+1
+      uiv_ct=uiv_ct+1
       upgradeivprice=upgradeivprice*inflationupgradeiv
       nameElement.textContent =    a(clicks); 
       priceElementFour.textContent = a(upgradeivprice)
