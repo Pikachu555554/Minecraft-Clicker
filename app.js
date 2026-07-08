@@ -1,4 +1,3 @@
-
 let clicks = Number(localStorage.getItem("clicks")) || 0;
 let addboost=Number(localStorage.getItem("addboost")) || 1;
 let autoclicker=Number(localStorage.getItem("autoclicker")) || 0;
