@@ -428,7 +428,7 @@ function buyupgradexvi(){
     if (clicks>=upgradexviprice){
       clicks=clicks-upgradexviprice
       autoclicker=autoclicker+100000
-      uxvi_ct=uxvi+1
+      uxvi_ct=uxvi_ct+1
       upgradexviprice=upgradexviprice*inflationupgradexvi
       nameElement.textContent = a(clicks); 
       priceElementSixteen.textContent = a(upgradexviprice)
