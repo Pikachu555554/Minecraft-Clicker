@@ -396,6 +396,8 @@ function buyupgradexiii(){
       nameElement.textContent = a(clicks); 
       priceElementThirteen.textContent = a(upgradexiiiprice)
       addboostElement.textContent = a(addboost)
+  }else{
+    alert("Sorry, you don't have enough grass.")
   }
 }
 function buyupgradexiv(){
