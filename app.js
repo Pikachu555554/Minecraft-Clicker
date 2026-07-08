@@ -396,8 +396,6 @@ function buyupgradexiii(){
       nameElement.textContent = a(clicks); 
       priceElementThirteen.textContent = a(upgradexiiiprice)
       addboostElement.textContent = a(addboost)
-  }else{
-    alert("Sorry, you don't have enough grass.")
   }
 }
 function buyupgradexiv(){
@@ -449,12 +447,7 @@ function buyprestige(){
       addboost=1
       autoclicker=0
 
-      addboostElement.textContent = a(addboost)
-      autoclickElement.textContent = a(autoclicker)
-      nameElement.textContent = a(clicks); 
-      priceElementPrestige.textContent = a(prestigeprice)
-      prestigeElement.textContent = a(prestige)
-      let upgradeiprice=10
+      upgradeiprice=10
       upgradeiiprice=10
       upgradeiiiprice=100
       upgradeivprice=100
@@ -486,6 +479,28 @@ function buyprestige(){
       uxiv_ct=0
       uxv_ct=0
       uxvi_ct=0
+      priceElement.textContent = a(upgradeiprice); 
+      priceElementTwo.textContent = a(upgradeiiprice); 
+      priceElementThree.textContent = a(upgradeiiiprice); 
+      priceElementFour.textContent = a(upgradeivprice); 
+      priceElementFive.textContent = a(upgradevprice); 
+      priceElementSix.textContent = a(upgradeviprice);
+      priceElementSeven.textContent = a(upgradeviiprice); 
+      priceElementEight.textContent =a(upgradeviiiprice); 
+      priceElementNine.textContent =a(upgradeixprice); 
+      priceElementTen.textContent =a(upgradexprice); 
+      priceElementEleven.textContent =a(upgradexiprice); 
+      priceElementTwelve.textContent =a(upgradexiiprice); 
+      priceElementThirteen.textContent =a(upgradexiiiprice); 
+      priceElementFourteen.textContent =a(upgradexivprice); 
+      priceElementFifteen.textContent =a(upgradexvprice); 
+      priceElementSixteen.textContent =a(upgradexviprice); 
+      priceElementPrestige.textContent =a(prestigeprice); 
+      addboostElement.textContent = a(addboost)
+      autoclickElement.textContent = a(autoclicker)
+      nameElement.textContent = a(clicks); 
+      priceElementPrestige.textContent = a(prestigeprice)
+      prestigeElement.textContent = a(prestige)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
