@@ -1,8 +1,8 @@
 let clicks = Number(localStorage.getItem("clicks")) || 0;
 let addboost=Number(localStorage.getItem("addboost")) || 1;
 let autoclicker=Number(localStorage.getItem("autoclicker")) || 0;
-let prestige=Number(localStorage.getItem("prestige")) || 1;
-
+let prestige=Number(localStorage.getItem("prestige")) ||  1;
+let clickboostdisp = Number(localStorage.getItem("clickboostdisp")) || addboost+(prestige-1);
 let ui_ct=Number(localStorage.getItem("ui_ct")) || 0;
 let uii_ct=Number(localStorage.getItem("uii_ct")) || 0;
 let uiii_ct=Number(localStorage.getItem("uiii_ct")) || 0;
@@ -36,7 +36,7 @@ let upgradexiiiprice=Number(localStorage.getItem("upgradexiiiprice")) ||100000;
 let upgradexivprice=Number(localStorage.getItem("upgradexivprice")) ||100000;
 let upgradexvprice=Number(localStorage.getItem("upgradexvprice")) ||1000000;
 let upgradexviprice=Number(localStorage.getItem("upgradexiprice")) ||1000000;
-let prestigeprice=Number(localStorage.getItem("prestigeprice")) ||10000000;
+let prestigeprice=Number(localStorage.getItem("upgradexiprice")) ||10000000;
 
 let inflationupgradei=1.2
 let inflationupgradeii=1.2
@@ -63,6 +63,7 @@ let upgradexiilimit=0
 
 let nameElement = document.getElementById("clicks");
 let clickButton = document.getElementById("click");
+let clickboostdispElement = document.getElementById("clickboostdisp");
 
 let upgradeiButton = document.getElementById("upgradei");
 let upgradeiiButton = document.getElementById("upgradeii");
@@ -101,12 +102,11 @@ let priceElementSixteen = document.getElementById("upgradexvipricedisp")
 let priceElementPrestige = document.getElementById("prestigepricedisp")
 
 
-
-let autoclickElement = document.getElementById("autoclickdisp"); 
+let autoclickElement = document.getElementById("autoclickdisp");
 let addboostElement = document.getElementById("addboostdisp")
 let prestigeElement = document.getElementById("prestigedisp")
 
-nameElement.textContent = clicks;
+clickboostdispElement.textContent = a(clickboostdisp);
 priceElement.textContent = upgradeiprice; 
 priceElementTwo.textContent = upgradeiiprice; 
 priceElementThree.textContent = upgradeiiiprice; 
@@ -125,9 +125,7 @@ priceElementFifteen.textContent =a(upgradexvprice);
 priceElementSixteen.textContent =a(upgradexviprice); 
 priceElementPrestige.textContent =a(prestigeprice); 
 autoclickElement.textContent = autoclicker; 
-addboostElement.textContent = addboost;
 prestigeElement.textContent = prestige;
-
 var clickfx=document.getElementById("clicksound");
 function a(clicks){
   if (clicks>=1_000_000_000_000_000_000){
@@ -152,6 +150,7 @@ setInterval(function(){
       localStorage.setItem("prestige", prestige)
       localStorage.setItem("addboost", addboost)
       localStorage.setItem("prestigeprice", prestigeprice);
+      localStorage.setItem("clickboostdisp", clickboostdisp)
       localStorage.setItem("ui_ct", ui_ct)
       localStorage.setItem("uii_ct", uii_ct)
       localStorage.setItem("uiii_ct", uiii_ct)
@@ -189,14 +188,18 @@ setInterval(function(){
       localStorage.setItem("upgradevilimit", upgradevilimit)
       localStorage.setItem("upgradexilimit", upgradexilimit)
       localStorage.setItem("upgradexiilimit", upgradexiilimit)
-},10);
+},1000);
 setInterval(function(){
     clicks=clicks+(prestige*autoclicker)
        nameElement.textContent = a(clicks)
        autoclickElement.textContent = a(autoclicker)
 },1000);
 function increaseClicks() {
-    clicks = clicks+(addboost*prestige); 
+    clicks =clicks+(addboost*prestige);
+    clickButton.classList.remove('animate-click');
+    void clickButton.offsetWidth;
+    clickButton.classList.add('animate-click');
+    clickfx.currentTime=0;
     clickfx.play();
     nameElement.textContent = a(clicks); 
 }
@@ -206,9 +209,10 @@ function buyupgradei(){
       addboost=addboost+1
       ui_ct=ui_ct+1
       upgradeiprice=upgradeiprice*inflationupgradei
+      clickboostdisp=clickboostdisp+1*prestige
       nameElement.textContent =  a(clicks); 
       priceElement.textContent = a(upgradeiprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
@@ -232,9 +236,10 @@ function buyupgradeiii(){
       addboost=addboost+10
       uiii_ct=uiii_ct+1
       upgradeiiiprice=upgradeiiiprice*inflationupgradeiii
+      clickboostdisp=clickboostdisp+10*prestige
       nameElement.textContent =  a(clicks); 
       priceElementThree.textContent = a(upgradeiiiprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
@@ -244,7 +249,7 @@ function buyupgradeiv(){
       clicks=clicks-upgradeivprice
       autoclicker=autoclicker+10
       uiv_ct=uiv_ct+1
-      upgradeivprice=upgradeivprice*inflationupgradeiv
+      upgradeivprice=upgradeivprice*inflationupgradei
       nameElement.textContent =    a(clicks); 
       priceElementFour.textContent = a(upgradeivprice)
       autoclickElement.textContent = a(autoclicker)
@@ -258,11 +263,12 @@ function buyupgradev(){
       clicks=clicks-upgradevprice
       addboost=addboost*2
       uv_ct=uv_ct+1
+      clickboostdisp=clickboostdisp*2
       upgradevprice=upgradevprice*inflationupgradev
       upgradevlimit=upgradevlimit+1
       nameElement.textContent = a(clicks); 
       priceElementFive.textContent = a(upgradevprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
       if (upgradevlimit>=2){
         priceElementFive.textContent= "Limit Reached"
       }
@@ -298,10 +304,11 @@ function buyupgradevii(){
       clicks=clicks-upgradeviiprice
       addboost=addboost+100
       uvii_ct=uvii_ct+1
+      clickboostdisp=clickboostdisp+100*prestige
       upgradeviiprice=upgradeviiprice*inflationupgradevii
       nameElement.textContent =    a(clicks); 
       priceElementSeven.textContent = a(upgradeviiprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
@@ -324,10 +331,11 @@ function buyupgradeix(){
       clicks=clicks-upgradeixprice
       addboost=addboost+1000
       uix_ct=uix_ct+1
+      clickboostdisp=clickboostdisp+1000*prestige
       upgradeixprice=upgradeixprice*inflationupgradeix
       nameElement.textContent =    a(clicks); 
       priceElementNine.textContent = a(upgradeixprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
@@ -351,11 +359,12 @@ function buyupgradexi(){
       clicks=clicks-upgradexiprice
       addboost=addboost*3
       uxi_ct+uxi_ct+1
+      clickboostdisp=clickboostdisp*3
       upgradexiprice=upgradexiprice*inflationupgradexi
       upgradexilimit=upgradexilimit+1
       nameElement.textContent = a(clicks); 
       priceElementEleven.textContent = a(upgradexiprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
       if (upgradexilimit>=2){
         priceElementEleven.textContent= "Limit Reached"
       }
@@ -392,10 +401,11 @@ function buyupgradexiii(){
       clicks=clicks-upgradexiiiprice
       addboost=addboost+10000
       uxiii_ct=uxiii_ct+1
+      clickboostdisp=clickboostdisp+10000*prestige
       upgradexiiiprice=upgradexiiiprice*inflationupgradexiii
       nameElement.textContent = a(clicks); 
       priceElementThirteen.textContent = a(upgradexiiiprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
   }
 }
 function buyupgradexiv(){
@@ -415,11 +425,12 @@ function buyupgradexv(){
     if (clicks>=upgradexvprice){
       clicks=clicks-upgradexvprice
       addboost=addboost+100000
+      clickboostdisp=clickboostdisp+100000*prestige
       uxv_ct=uxv_ct+1
       upgradexvprice=upgradexvprice*inflationupgradexv
       nameElement.textContent = a(clicks); 
       priceElementFifteen.textContent = a(upgradexvprice)
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
     }else{
       alert("Sorry, you don't have enough grass.")
     }
@@ -446,7 +457,7 @@ function buyprestige(){
       clicks=clicks*0
       addboost=1
       autoclicker=0
-
+      
       upgradeiprice=10
       upgradeiiprice=10
       upgradeiiiprice=100
@@ -463,6 +474,7 @@ function buyprestige(){
       upgradexivprice=100000
       upgradexvprice=1000000
       upgradexviprice=1000000
+      clickboostdisp=prestige
       ui_ct=0
       uii_ct=0
       uiii_ct=0
@@ -496,11 +508,12 @@ function buyprestige(){
       priceElementFifteen.textContent =a(upgradexvprice); 
       priceElementSixteen.textContent =a(upgradexviprice); 
       priceElementPrestige.textContent =a(prestigeprice); 
-      addboostElement.textContent = a(addboost)
+      clickboostdispElement.textContent = a(clickboostdisp)
       autoclickElement.textContent = a(autoclicker)
       nameElement.textContent = a(clicks); 
       priceElementPrestige.textContent = a(prestigeprice)
       prestigeElement.textContent = a(prestige)
+
     }else{
       alert("Sorry, you don't have enough grass.")
     }
